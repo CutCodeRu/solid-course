@@ -2,6 +2,10 @@
 
 namespace App\Providers;
 
+use App\Utilities\Notifications\NotificationsContract;
+use App\Utilities\Notifications\SlackNotification;
+use App\Utilities\Notifications\TelegramNotification;
+use App\Utilities\Reports\ReportContract;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +27,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->app->bind(NotificationsContract::class, SlackNotification::class);
     }
 }
