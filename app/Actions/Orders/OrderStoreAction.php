@@ -8,7 +8,7 @@ class OrderStoreAction
 {
     public function handle(array $data) : Order
     {
-        $order = Order::create($data);
+        $order = Order::query()->create($data);
 
         if($order) {
             for($index = 0; $index < count($data['products_ids']); $index++) {

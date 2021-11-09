@@ -2,7 +2,7 @@
 
 namespace App\Utilities\Reports;
 
-class ReportPdfService implements ReportContract
+class ReportPdfService implements ReportContract, ReportDownloadableContract
 {
 
     public function getData()
