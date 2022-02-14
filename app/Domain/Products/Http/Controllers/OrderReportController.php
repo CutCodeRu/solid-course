@@ -10,7 +10,7 @@ use Illuminate\Http\Response;
 
 class OrderReportController extends Controller
 {
-    public function index(Order $order, string $format = 'html')
+    public function index(Order $post, string $format = 'html')
     {
         if($format === 'pdf') {
             return $this->downloadReportPdf();
@@ -25,7 +25,7 @@ class OrderReportController extends Controller
         }
 
         if($format === 'html') {
-            return view('orders.report', compact($order));
+            return view('posts.report', compact($post));
         }
     }
 
